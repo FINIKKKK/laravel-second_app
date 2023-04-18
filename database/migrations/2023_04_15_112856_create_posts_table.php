@@ -21,6 +21,9 @@ return new class extends Migration
             $table->unsignedBigInteger('likes')->default(0);
             $table->boolean('is_published')->default(1);
             $table->timestamps();
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->index('category_id', 'post_category_idx');
+            $table->foreign('category_id', 'post_category_fk')->references('id')->on('categories');
         });
     }
 
