@@ -9,15 +9,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'title',
-        'content',
-        'image',
-    ];
-
-    protected $attributes = [
-        'likes' => 0,
-    ];  
+   protected $guarded = false;
 
     public function categories()
     {

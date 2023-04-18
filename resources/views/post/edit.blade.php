@@ -18,6 +18,15 @@
             <label for="content" class="form-label">Content</label>
             <textarea type="text" name="content" class="form-control" id="content" placeholder="Content">{{ $post->content }}</textarea>
         </div>
+        <div class="mb-3">
+            <label for="title" class="form-label">Category</label>
+            <select class="form-select" name="category_id">
+                @foreach ($categories as $category)
+                    <option {{ $category->id === $post->category_id ? 'selected' : '' }} value="{{ $category->id }}">
+                        {{ $category->title }}</option>
+                @endforeach
+            </select>
+        </div>
         <button class="btn btn-primary">Edit</button>
     </form>
 @endsection
