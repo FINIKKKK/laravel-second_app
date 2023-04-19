@@ -6,4 +6,6 @@
             <a href="{{ route('post.show', $post->id) }}"> {{ $post->title }}</a>
         </li>
     @endforeach
+
+    {{ $posts->links() }}
 @endsection
